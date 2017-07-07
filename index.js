@@ -5,7 +5,7 @@ function encode(input, output, callback) {
 	if (!callback) {
 		throw new Error('No function given for callback');
 	}
-	const spawnedEncoder = spawn('./build/draco_encoder', ['-i', input, '-o', output]);
+	const spawnedEncoder = spawn(`${__dirname}/build/draco_encoder`, ['-i', input, '-o', output]);
 	const stderr = [];
 	const stdout = [];
 
@@ -30,7 +30,7 @@ function decode(input, output, callback) {
 	if (!callback) {
 		throw new Error('No function given for callback');
 	}
-	const spawnedDecoder = spawn('./build/draco_decoder', ['-i', input, '-o', output]);
+	const spawnedDecoder = spawn(`${__dirname}/build/draco_decoder`, ['-i', input, '-o', output]);
 	const stderr = [];
 	const stdout = [];
 
