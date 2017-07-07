@@ -1,0 +1,29 @@
+{
+  "name": "@factoryfour/draco",
+  "version": "1.0.0",
+  "description": "<p align=\"center\"> <img src=\"docs/DracoLogo.jpeg\" /> </p>",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "cmake-js build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/factoryfour/draco.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/factoryfour/draco/issues"
+  },
+  "engines" : {
+    "node": "6.10.0"
+  },
+  "homepage": "https://github.com/factoryfour/draco#readme",
+  "dependencies": {
+    "cmake-js": "^3.5.0"
+  }
+}
