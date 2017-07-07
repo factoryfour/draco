@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/factoryfour/draco/issues"
   },
-  "engines" : {
+  "engines": {
     "node": "6.10.0"
   },
   "homepage": "https://github.com/factoryfour/draco#readme",
