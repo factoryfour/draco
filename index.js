@@ -5,19 +5,19 @@ function encode(input, output, callback) {
 	if (!callback) {
 		throw new Error('No function given for callback');
 	}
-	const ls = spawn('./build/draco_encoder', ['-i', input, '-o', output]);
+	const spawnedEncoder = spawn('./build/draco_encoder', ['-i', input, '-o', output]);
 	const stderr = [];
 	const stdout = [];
 
-	ls.stdout.on('data', (data) => {
+	spawnedEncoder.stdout.on('data', (data) => {
 		stdout.push(data);
 	});
 
-	ls.stderr.on('data', (data) => {
+	spawnedEncoder.stderr.on('data', (data) => {
 		stderr.push(data);
 	});
 
-	ls.on('close', ((code) => {
+	spawnedEncoder.on('close', ((code) => {
 		if (code > 0) {
 			return callback(stderr, stdout);
 		}
@@ -26,6 +26,31 @@ function encode(input, output, callback) {
 }
 
 
+function decode(input, output, callback) {
+	if (!callback) {
+		throw new Error('No function given for callback');
+	}
+	const spawnedDecoder = spawn('./build/draco_decoder', ['-i', input, '-o', output]);
+	const stderr = [];
+	const stdout = [];
+
+	spawnedDecoder.stdout.on('data', (data) => {
+		stdout.push(data);
+	});
+
+	spawnedDecoder.stderr.on('data', (data) => {
+		stderr.push(data);
+	});
+
+	spawnedDecoder.on('close', ((code) => {
+		if (code > 0) {
+			return callback(stderr, stdout);
+		}
+		return callback(null, stdout);
+	}));
+}
+
 module.exports = {
-	encode
+	encode,
+	decode
 };
