@@ -1,6 +1,6 @@
 {
   "name": "@factoryfour/draco",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "<p align=\"center\"> <img src=\"docs/DracoLogo.jpeg\" /> </p>",
   "main": "index.js",
   "directories": {
